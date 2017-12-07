@@ -13,7 +13,6 @@ import com.jme3.scene.shape.Sphere;
 public class Menagerie extends SimpleApplication {
 
 	private Spatial cube;
-	private Spatial sphere;
 	private ChaseCamera chaseCam;
 
 	public static void main(String[] args) {
@@ -33,7 +32,7 @@ public class Menagerie extends SimpleApplication {
 		Sphere meshSphere = new Sphere(64, 64, 1.5f);
 
 		cube = new Geometry("TEST-cube", meshCube);
-		sphere = new Geometry("TEST-sphere", meshSphere);
+		Spatial sphere = new Geometry("TEST-sphere", meshSphere);
 
 		matCube.setColor("Color", ColorRGBA.Red);
 		matSphere.setColor("Color", ColorRGBA.Green);
