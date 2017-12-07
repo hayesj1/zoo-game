@@ -3,7 +3,7 @@ language: java
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y junit4
-
+  - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 install: ant all
 jdk:
   - oraclejdk8
