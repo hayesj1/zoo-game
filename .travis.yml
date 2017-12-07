@@ -1,5 +1,10 @@
 language: java
-install: junit4
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y junit
+
+install: junit
 jdk:
   - oraclejdk8
   - oraclejdk7
