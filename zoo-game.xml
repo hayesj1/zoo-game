@@ -123,4 +123,7 @@
   <target name="build.modules" depends="init, clean, compile.module.menagerie" description="build all modules"/>
   
   <target name="all" depends="build.modules" description="build all"/>
+	
+	<target name="test" depends="init, clean, compile.module.menagerie, compile.module.menagerie.tests"
+	        description="Test Project"/>
 </project>
