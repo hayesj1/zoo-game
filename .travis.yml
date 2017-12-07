@@ -4,7 +4,7 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y junit4
 
-install: junit
+install: junit4
 jdk:
   - oraclejdk8
   - oraclejdk7
