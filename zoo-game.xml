@@ -91,13 +91,20 @@
   
   
   <!-- Global Libraries -->
-  
-  <path id="library.jme3.classpath">
+	
+	<path id="library.jme3.classpath">
     <fileset dir="C:/Users/hayesj3/Documents/Global_Libs/jMonkeyEngine/jME3.1-stable/lib">
       <patternset refid="library.patterns"/>
     </fileset>
   </path>
-  <!-- Register Custom Compiler Taskdefs -->
+	
+	<path id="library.junit-4.classpath">
+		<fileset dir="C:/Users/hayesj3/Documents/Global_Libs/junit/junit-4.12">
+			<patternset refid="library.patterns"/>
+		</fileset>
+	</path>
+	
+	<!-- Register Custom Compiler Taskdefs -->
   <property name="javac2.home" value="${idea.home}/lib"/>
   <path id="javac2.classpath">
     <pathelement location="${javac2.home}/javac2.jar"/>
@@ -124,6 +131,18 @@
   
   <target name="all" depends="build.modules" description="build all"/>
 	
-	<target name="test" depends="init, clean, compile.module.menagerie, compile.module.menagerie.tests"
-	        description="Test Project"/>
+	<target name="test" depends="init, clean, compile.module.menagerie" description="Test Project">
+		<junit printsummary="on" haltonfailure="yes" fork="true">
+			<classpath>
+				<path refid="javac2.classpath"/>
+				<path refid="library.junit-4.classpath"/>
+				<pathelement location="${menagerie.output.dir}"/>
+				<pathelement location="${menagerie.testoutput.dir}"/>
+			</classpath>
+			<formatter type="brief" usefile="false"/>
+			<batchtest>
+				<fileset dir="src/test/java" includes="**/*Test.java"/>
+			</batchtest>
+		</junit>
+	</target>
 </project>
