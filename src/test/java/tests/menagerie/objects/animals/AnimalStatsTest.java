@@ -2,7 +2,7 @@ package tests.menagerie.objects.animals;
 
 import menagerie.objects.animals.AnimalStats;
 import org.junit.Test;
-import util.TestUtils;
+import tests.util.TestUtils;
 
 
 public class AnimalStatsTest {
@@ -30,7 +30,6 @@ public class AnimalStatsTest {
 	public void getStat() {
 		float actual = new AnimalStats(goodStats).getStat(0);
 		TestUtils.testEquals(goodStats[0], actual);
-
 		actual = new AnimalStats(outOfBoundsMinStats).getStat(2);
 		TestUtils.testEquals(boundsMinStats[2], actual);
 

@@ -3,7 +3,7 @@ package tests.menagerie.objects.animals;
 import menagerie.objects.animals.Animal;
 import menagerie.objects.animals.AnimalStats;
 import org.junit.Test;
-import util.TestUtils;
+import tests.util.TestUtils;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
